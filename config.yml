@@ -1,5 +1,5 @@
-title: # a name for your Learning Lab course
-tagline: # a short description for your Learning Lab course, displayed on the course catalog
+title: Hello Semgrep # a name for your Learning Lab course
+tagline: Learn to set up continuous code scanning with Semgrep # a short description for your Learning Lab course, displayed on the course catalog
 description: # a longer description for your Learning Lab course, displayed on the course's landing page
 
 # Repository setup
@@ -7,8 +7,8 @@ description: # a longer description for your Learning Lab course, displayed on t
 # This will be used when the repository is crated for each individual learner
 
 template:
-  name:     # the name of the repository when it is created for the learner
-  repo:     # the name of the template repository from which to clone for the learner
+  name: lab-hello-semgrep    # the name of the repository when it is created for the learner
+  repo: lab-hello-semgrep   # the name of the template repository from which to clone for the learner
 
 # `before` block
 # Actions to take place after the learner registers, but before they start interacting with their repo
