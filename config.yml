@@ -22,6 +22,20 @@ before:
 # A list of steps that take the learner through the course
 # Create one step for each action that a learner will complete
 
+# Before - forks vulnerable repo
+# * Set the Semgrep repo secret
+# * Set up semgrep.yml
+# * Issue PR with X == X and watch it fail
+# * Change the code to 3 = 5 or something else and have it succeed
+# * Walk briefly though Semgrep App - what it does, where things are
+# * Intro to ellipses operator - block eval(...)
+# * Intro to metavar
+# * Warn on new route - audit only
+# * Create owasp_devslop community Slack channel - point webhook there
+# * Audit @csrf_exempt or other authn/authz
+# * XSS
+# * < write some custom rule and add it to policy >
+
 steps:
 # Step 1: EDIT HERE - INTERNAL COMMENT DESCRIBING STEP 
 - title: Step 1 Title # the title of the step, shown to the learner in the course progress page
