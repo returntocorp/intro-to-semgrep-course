@@ -56,3 +56,7 @@ We'll walk through the app later.
 ## Ready?
 
 Comment on this issue and we'll see what scanning in CI looks like 🚀
+
+<hr>
+<h3 align="center">I'll respond in this pull request when I detect a comment posted to it.</h3>
+
