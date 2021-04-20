@@ -1,6 +1,6 @@
-title: Hello Semgrep # a name for your Learning Lab course
-tagline: Learn to set up continuous code scanning with Semgrep # a short description for your Learning Lab course, displayed on the course catalog
-description: # a longer description for your Learning Lab course, displayed on the course's landing page
+title: "Intro to Semgrep" # a name for your Learning Lab course
+tagline: "Learn to set up continuous code scanning with Semgrep." # a short description for your Learning Lab course, displayed on the course catalog
+description: "If you're looking for an open source, lightweight static analysis tool built for modern development, you've found it in Semgrep. In an hour, this class show you how to set up continuous PR scanning, using Juice Shop as an example. You'll also learn to write and roll-out custom Semgrep rules, finding anti-patterns and enforcing secure guardrails unique to *your* company." # a longer description for your Learning Lab course, displayed on the course's landing page
 
 # Repository setup
 # The following section template information for the repository
@@ -14,7 +14,14 @@ template:
 # Actions to take place after the learner registers, but before they start interacting with their repo
 
 before:
-- type: # the type of action, full list at https://lab.github.com/docs/actions/
+- type: respond
+  with: 01_first-response.md
+- type: createPullRequest # the type of action, full list at https://lab.github.com/docs/actions/
+  title: Let's get Semgrep Set Up 
+  body: 01_welcome.md
+  head: setup-semgrep # branch
+#- type: updateBranchProtection
+
   # some actions require additional options, those should appear below `type:`
   # you can execute multiple actions in the `before` block
 
@@ -23,15 +30,38 @@ before:
 # Create one step for each action that a learner will complete
 
 steps:
-# Step 1: EDIT HERE - INTERNAL COMMENT DESCRIBING STEP 
-- title: Step 1 Title # the title of the step, shown to the learner in the course progress page
-  description: Description # a description of the step, shown to the learner in the course progress page
-  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
-  actions: # a list of the actions that will occur when the step is triggered by an event
-  - type: # the type of action, full list at https://lab.github.com/docs/actions
+- title: Assign yourself
+  description: Assign the first issue to yourself.
+  event: issues.assigned
+  link: 'https://github.com/clintgibler/lab-starter/issues/1'
+  actions:
+  - type: gate
+    left: '%payload.pull_request.title%'
+    operator: ===
+    right: Add name to README
+  - type: gate
+      left: '%payload.pull_request.base.ref%'
+      operator: ===
+      right: main
+      else:
+      - type: respond
+        with: 01_try-again.md
+  - type: respond
+    with: 01_nice-work.md
 
+# Step 1: EDIT HERE - INTERNAL COMMENT DESCRIBING STEP 
+- title: Add Semgrep to CI via a GitHub Action # the title of the step, shown to the learner in the course progress page
+  description: We'll add a semgrep.yml  # a description of the step, shown to the learner in the course progress page
+  event: issue_comment.created
+  link:  '{{ repoUrl }}/pull/1' # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  actions: # a list of the actions that will occur when the step is triggered by an event
+  - type: respond # the type of action, full list at https://lab.github.com/docs/actions
+    with: 02_merge_semgrep_yml.md
+    data:
+      url: '%payload.repository.html_url%/edit/.github/workflows/semgrep.yml?'
+      
 # Step 2: EDIT HERE -INTERNAL COMMENT FOR STEP 2
-- title: Step 2 Title # the title of the step, shown to the learner in the course progress page
+- title: Test Semgrep is Working in CI # the title of the step, shown to the learner in the course progress page
   description: Description 2 # a description of the step, shown to the learner in the course progress page
 #  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
 #  actions: # a list of the actions that will occur when the step is triggered by an event
