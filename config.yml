@@ -61,29 +61,29 @@ steps:
       url: '%payload.repository.html_url%/edit/.github/workflows/semgrep.yml?'
       
 # Step 2: EDIT HERE -INTERNAL COMMENT FOR STEP 2
-- title: Test Semgrep is Working in CI # the title of the step, shown to the learner in the course progress page
-  description: Description 2 # a description of the step, shown to the learner in the course progress page
+#- title: Test Semgrep is Working in CI # the title of the step, shown to the learner in the course progress page
+#  description: Description 2 # a description of the step, shown to the learner in the course progress page
 #  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
 
 # Step 3: EDIT HERE - INTERNAL COMMENT FOR STEP 3
-- title: Step 3 Title # the title of the step, shown to the learner in the course progress page
-  description: Description 3 # a description of the step, shown to the learner in the course progress page
+#- title: Step 3 Title # the title of the step, shown to the learner in the course progress page
+#  description: Description 3 # a description of the step, shown to the learner in the course progress page
 #  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
 
 # Step 4: EDIT HERE - INTERNAL COMMENT FOR STEP 4
-- title: Step 4 Title # the title of the step, shown to the learner in the course progress page
-  description: Description 4 # a description of the step, shown to the learner in the course progress page
+#- title: Step 4 Title # the title of the step, shown to the learner in the course progress page
+#  description: Description 4 # a description of the step, shown to the learner in the course progress page
 #  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
 
 # Step 5: EDIT HERE - INTERNAL COMMENT FOR STEP 5
-- title: Step 5 Title # the title of the step, shown to the learner in the course progress page
-  description: Description 5 # a description of the step, shown to the learner in the course progress page
+#- title: Step 5 Title # the title of the step, shown to the learner in the course progress page
+#  description: Description 5 # a description of the step, shown to the learner in the course progress page
 #  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
