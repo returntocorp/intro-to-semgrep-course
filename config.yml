@@ -1,6 +1,6 @@
 title: "Intro to Semgrep" # a name for your Learning Lab course
 tagline: "Learn to set up continuous code scanning with Semgrep." # a short description for your Learning Lab course, displayed on the course catalog
-description: "If you're looking for an open source, lightweight static analysis tool built for modern development, you've found it in Semgrep. In an hour, this class show you how to set up continuous PR scanning, using Juice Shop as an example. You'll also learn to write and roll-out custom Semgrep rules, finding anti-patterns and enforcing secure guardrails unique to *your* company." # a longer description for your Learning Lab course, displayed on the course's landing page
+description: "This class show you how to set up continuous PR scanning, using Juice Shop as an example. You'll also learn to write and roll-out custom Semgrep rules, finding anti-patterns and enforcing secure guardrails unique to *your* company." # a longer description for your Learning Lab course, displayed on the course's landing page
 
 # Repository setup
 # The following section template information for the repository
