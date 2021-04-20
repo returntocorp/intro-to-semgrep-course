@@ -30,6 +30,16 @@ before:
 # Create one step for each action that a learner will complete
 
 steps:
+- title: Assign yourself
+  description: Assign the first issue to yourself.
+  event: issues.assigned
+  link: 'https://github.com/clintgibler/lab-starter/issues/1'
+  actions:
+  - type: gate
+    left: '%payload.pull_request.title%'
+    operator: ===
+    right: Add name to README
+    
 # Step 1: EDIT HERE - INTERNAL COMMENT DESCRIBING STEP 
 - title: Add Semgrep to CI via a GitHub Action # the title of the step, shown to the learner in the course progress page
   description: We'll add a semgrep.yml  # a description of the step, shown to the learner in the course progress page
