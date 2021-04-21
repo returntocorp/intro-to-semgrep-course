@@ -7,8 +7,8 @@ description: "This class will show you how to set up continuous PR scanning with
 # This will be used when the repository is crated for each individual learner
 
 template:
-  name: lab-intro-to-semgrep2    # the name of the repository when it is created for the learner
-  repo: lab-intro-to-semgrep   # the name of the template repository from which to clone for the learner
+  name: intro-to-semgrep    # the name of the repository when it is created for the learner
+  repo: intro-to-semgrep-template   # the name of the template repository from which to clone for the learner
 
 # `before` block
 # Actions to take place after the learner registers, but before they start interacting with their repo
