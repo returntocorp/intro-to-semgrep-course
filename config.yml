@@ -19,7 +19,7 @@ before:
 - type: createPullRequest # the type of action, full list at https://lab.github.com/docs/actions/
   title: Welcome to Semgrep! # Let's get Semgrep Set Up
   body: 01_welcome.md
-  #head: setup-semgrep # branch
+  head: main # setup-semgrep # branch
 #- type: updateBranchProtection
 # https://lab.github.com/docs/actions/createIssue
 - type: createIssue
