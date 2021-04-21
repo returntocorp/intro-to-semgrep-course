@@ -17,10 +17,18 @@ before:
 #- type: respond
 #  with: 01_first-response.md
 - type: createPullRequest # the type of action, full list at https://lab.github.com/docs/actions/
-  title: Let's get Semgrep Set Up 
+  title: Welcome to Semgrep! # Let's get Semgrep Set Up
   body: 01_welcome.md
-  head: setup-semgrep # branch
+  head: main # setup-semgrep # branch
 #- type: updateBranchProtection
+# https://lab.github.com/docs/actions/createIssue
+- type: createIssue
+  title: Useful Semgrep Links
+  body: issue-semgrep-links.md
+  data:
+    issue_doc_url: '%payload.repository.html_url%/issues/1'
+  #comments:
+  #- issue-comment.md
 
   # some actions require additional options, those should appear below `type:`
   # you can execute multiple actions in the `before` block
@@ -49,7 +57,18 @@ steps:
 #  - type: respond
 #    with: 01_nice-work.md
 
-# Step 1: EDIT HERE - INTERNAL COMMENT DESCRIBING STEP 
+# Step 2: EDIT HERE -INTERNAL COMMENT FOR STEP 2
+- title: Getting Set Up # the title of the step, shown to the learner in the course progress page
+  description: Create a Semgrep Dashboard account, set up Slack notifications, and create a Semgrep token. # a description of the step, shown to the learner in the course progress page
+  event: issue_comment.created # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  link: '{{ repoUrl }}/pull/1'
+  actions: # a list of the actions that will occur when the step is triggered by an event
+  - type: respond # the type of action, full list at https://lab.github.com/docs/actions
+    with: 02_merge_semgrep_yml.md
+    data:
+      url: '%payload.repository.html_url%/edit/.github/workflows/semgrep.yml?'
+
+# Step 1: EDIT HERE - INTERNAL COMMENT DESCRIBING STEP
 - title: Add Semgrep to CI via a GitHub Action # the title of the step, shown to the learner in the course progress page
   description: We'll add a semgrep.yml  # a description of the step, shown to the learner in the course progress page
   event: issue_comment.created
@@ -59,7 +78,7 @@ steps:
     with: 02_merge_semgrep_yml.md
     data:
       url: '%payload.repository.html_url%/edit/.github/workflows/semgrep.yml?'
-      
+
 # Step 2: EDIT HERE -INTERNAL COMMENT FOR STEP 2
 #- title: Test Semgrep is Working in CI # the title of the step, shown to the learner in the course progress page
 #  description: Description 2 # a description of the step, shown to the learner in the course progress page
