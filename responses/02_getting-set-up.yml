@@ -1,0 +1,36 @@
+## Getting Started
+
+### Installing Semgrep
+
+This isn't a required step, but it might be nice to have Semgrep installed locally so you can easily run scans via CLI.
+
+TODO link to docs, have brew, pip, Docker instructions
+
+### Slack
+
+r2c Community Slack
+
+
+Many security teams choose 
+
+### Create Semgrep App Account
+
+We need this for managing Semgrep in CI and choosing which rules to run, where.
+
+Totally free for open *and* closed source repos.
+
+Background stuff
+
+#### Set up Slack Notification
+
+Copy in Slack webhook URL provided by r2c into notifications. Configure policy to use those notifications.
+
+#### Add Semgrep Token to GitHub Secrets
+
+Grab token
+
+Add to project Secrets tab
+
+TODO GIF showing the process or Youtube video
+
+We'll walk through the app later.

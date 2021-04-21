@@ -26,6 +26,6 @@ jobs:
       - uses: returntocorp/semgrep-action@v1
         with:
           publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
-          publishDeployment: 272
+          publishDeployment: TODO
 ~~~          
 
