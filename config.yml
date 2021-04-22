@@ -19,14 +19,14 @@ before:
 - type: createPullRequest # the type of action, full list at https://lab.github.com/docs/actions/
   title: Welcome to Semgrep! # Let's get Semgrep Set Up
   body: 01_welcome.md
-  head: setup-semgrep # main # branch
+  head: main # setup-semgrep # main # branch
 #- type: updateBranchProtection
 # https://lab.github.com/docs/actions/createIssue
 - type: createIssue
   title: Useful Semgrep Links
   body: issue-semgrep-links.md
   data:
-    issue_doc_url: '%payload.repository.html_url%/issues/1'
+    issue_doc_url: '{{ repoUrl }}/issues/1'
   #comments:
   #- issue-comment.md
 
@@ -69,15 +69,21 @@ steps:
       secrets_setting_url: '%payload.repository.html_url%/settings/secrets/actions'
 
 # Step 1: EDIT HERE - INTERNAL COMMENT DESCRIBING STEP
-- title: Add Semgrep to CI via a GitHub Action # the title of the step, shown to the learner in the course progress page
-  description: We'll add a semgrep.yml  # a description of the step, shown to the learner in the course progress page
-  event: issue_comment.created
+- title: Add Semgrep to CI via GitHub Action # the title of the step, shown to the learner in the course progress page
+  description: We'll add a semgrep.yml file to the repo and point it at our Dashboard account.  # a description of the step, shown to the learner in the course progress page
+  event: pull_request.synchronize
   link:  '{{ repoUrl }}/pull/1' # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
   actions: # a list of the actions that will occur when the step is triggered by an event
-  - type: respond # the type of action, full list at https://lab.github.com/docs/actions
-    with: 03_merge-semgrep-yml.md
+  - type: createPullRequest # the type of action, full list at https://lab.github.com/docs/actions/
+    title: Set up Semgrep in CI # Let's get Semgrep Set Up
+    body: 03_set-up-semgrep.md
+    head: setup-semgrep # branch
     data:
       url: '%payload.repository.html_url%/edit/.github/workflows/semgrep.yml?'
+  - type: respond # the type of action, full list at https://lab.github.com/docs/actions
+    with: 03a_goto-semgrep-setup-pr.md
+    data:
+      url: '{{ repoUrl }}/pull/2'
 
 # Step 2: EDIT HERE -INTERNAL COMMENT FOR STEP 2
 #- title: Test Semgrep is Working in CI # the title of the step, shown to the learner in the course progress page
