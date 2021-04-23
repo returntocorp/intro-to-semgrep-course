@@ -41,6 +41,6 @@ We'll walk through the app later.
    3. Click the "Test" button, and you should see a message from Semgrep in Slack.
 
 <hr>
-<h3 align="center">Close this pull request when you're ready and I'll respond with the next step.</h3>
+<h3 align="center">Comment on this pull request when you're ready and I'll respond with the next step.</h3>
 
 
