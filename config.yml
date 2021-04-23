@@ -17,7 +17,7 @@ before:
     title: Useful Semgrep Links
     body: issue-semgrep-links.md
     data:
-      issue_doc_url: '{{ repoUrl }}/issues/1'
+      issue_doc_url: '%repoUrl%/issues/1'
 steps:
   - title: Getting Set Up
     description: >-
