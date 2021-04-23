@@ -42,8 +42,8 @@ steps:
 #      url: '%payload.repository.html_url%/edit/.github/workflows/semgrep.yml?'
   - type: respond # the type of action, full list at https://lab.github.com/docs/actions
     with: 03_set-up-semgrep.md # 03_goto-semgrep-setup-pr.md
-    #data:
-    #  secrets_setting_url: '%payload.repository.html_url%/settings/secrets/actions'
+    data:
+      secrets_setting_url: '%payload.repository.html_url%/settings/secrets/actions'
     #data:
     #  url: '%repoUrl%/pull/2'
 
