@@ -13,11 +13,12 @@ before:
     title: Welcome to Semgrep!
     body: 01_welcome.md
     head: main
+    data:
+      issue_doc_url: '%payload.repository.html_url%/issues/1'    
   - type: createIssue
     title: Useful Semgrep Links
     body: issue-semgrep-links.md
-    data:
-      issue_doc_url: '%payload.repository.html_url%/issues/1'
+
 steps:
 - title: Getting Set Up # the title of the step, shown to the learner in the course progress page
   # video: https://lab.github.com/docs/embed-videos
