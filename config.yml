@@ -1,117 +1,38 @@
-title: "Intro to Semgrep" # a name for your Learning Lab course
-tagline: "Learn to set up continuous code scanning with Semgrep." # a short description for your Learning Lab course, displayed on the course catalog
-description: "This class will show you how to set up continuous PR scanning with Semgrep, using Juice Shop as an example. You'll also learn to write and roll-out custom Semgrep rules, finding anti-patterns and enforcing secure guardrails unique to *your* company." # a longer description for your Learning Lab course, displayed on the course's landing page
-
-# Repository setup
-# The following section template information for the repository
-# This will be used when the repository is crated for each individual learner
-
+title: Intro to Semgrep
+tagline: Learn to set up continuous code scanning with Semgrep.
+description: >-
+  This class will show you how to set up continuous PR scanning with Semgrep,
+  using Juice Shop as an example. You'll also learn to write and roll-out custom
+  Semgrep rules, finding anti-patterns and enforcing secure guardrails unique to
+  *your* company.
 template:
-  name: intro-to-semgrep    # the name of the repository when it is created for the learner
-  repo: intro-to-semgrep-template   # the name of the template repository from which to clone for the learner
-
-# `before` block
-# Actions to take place after the learner registers, but before they start interacting with their repo
-
+  name: intro-to-semgrep
+  repo: intro-to-semgrep-template
 before:
-#- type: respond
-#  with: 01_first-response.md
-- type: createPullRequest # the type of action, full list at https://lab.github.com/docs/actions/
-  title: Welcome to Semgrep! # Let's get Semgrep Set Up
-  body: 01_welcome.md
-  head: main # setup-semgrep # main # branch
-#- type: updateBranchProtection
-# https://lab.github.com/docs/actions/createIssue
-- type: createIssue
-  title: Useful Semgrep Links
-  body: issue-semgrep-links.md
-  data:
-    issue_doc_url: '{{ repoUrl }}/issues/1'
-  #comments:
-  #- issue-comment.md
-
-  # some actions require additional options, those should appear below `type:`
-  # you can execute multiple actions in the `before` block
-
-# Steps for the course
-# A list of steps that take the learner through the course
-# Create one step for each action that a learner will complete
-
-steps:
-#- title: Assign yourself
-#  description: Assign the first issue to yourself.
-#  event: issues.assigned
-#  link: 'https://github.com/clintgibler/lab-starter/issues/1'
-#  actions:
-#  - type: gate
-#    left: '%payload.pull_request.title%'
-#    operator: ===
-#    right: Add name to README
-#  - type: gate
-#    left: '%payload.pull_request.base.ref%'
-#    operator: ===
-#    right: main
-#    else:
-#    - type: respond
-#      with: 01_try-again.md
-#  - type: respond
-#    with: 01_nice-work.md
-
-# Step 2: EDIT HERE -INTERNAL COMMENT FOR STEP 2
-- title: Getting Set Up # the title of the step, shown to the learner in the course progress page
-  # video: https://lab.github.com/docs/embed-videos
-  description: Create a Semgrep Dashboard account, set up Slack notifications, and create a Semgrep token. # a description of the step, shown to the learner in the course progress page
-  event: issue_comment.created # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
-  link: '{{ repoUrl }}/pull/1'
-  actions: # a list of the actions that will occur when the step is triggered by an event
-  - type: respond # the type of action, full list at https://lab.github.com/docs/actions
-    with: 02_getting-set-up.md
+  - type: createPullRequest
+    title: Welcome to Semgrep!
+    body: 01_welcome.md
+    head: main
+  - type: createIssue
+    title: Useful Semgrep Links
+    body: issue-semgrep-links.md
     data:
-      secrets_setting_url: '%payload.repository.html_url%/settings/secrets/actions'
-
-# Step 1: EDIT HERE - INTERNAL COMMENT DESCRIBING STEP
-#- title: Add Semgrep to CI via GitHub Action # the title of the step, shown to the learner in the course progress page
-#  description: We'll add a semgrep.yml file to the repo and point it at our Dashboard account.  # a description of the step, shown to the learner in the course progress page
-#  event: pull_request.synchronize
-#  link:  '{{ repoUrl }}/pull/1' # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
-#  actions: # a list of the actions that will occur when the step is triggered by an event
-#  - type: createPullRequest # the type of action, full list at https://lab.github.com/docs/actions/
-#    title: Set up Semgrep in CI # Let's get Semgrep Set Up
-#    body: 03_set-up-semgrep.md
-#    head: setup-semgrep # branch
-#    data:
-#      url: '%payload.repository.html_url%/edit/.github/workflows/semgrep.yml?'
-#  - type: respond # the type of action, full list at https://lab.github.com/docs/actions
-#    with: 03_goto-semgrep-setup-pr.md
-#    data:
-#      url: '%repoUrl%/pull/2'
-
-# Step 2: EDIT HERE -INTERNAL COMMENT FOR STEP 2
-#- title: Test Semgrep is Working in CI # the title of the step, shown to the learner in the course progress page
-#  description: Description 2 # a description of the step, shown to the learner in the course progress page
-#  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
-#  actions: # a list of the actions that will occur when the step is triggered by an event
-#  - type: # the type of action, full list at https://lab.github.com/docs/actions
-
-# Step 3: EDIT HERE - INTERNAL COMMENT FOR STEP 3
-#- title: Step 3 Title # the title of the step, shown to the learner in the course progress page
-#  description: Description 3 # a description of the step, shown to the learner in the course progress page
-#  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
-#  actions: # a list of the actions that will occur when the step is triggered by an event
-#  - type: # the type of action, full list at https://lab.github.com/docs/actions
-
-# Step 4: EDIT HERE - INTERNAL COMMENT FOR STEP 4
-#- title: Step 4 Title # the title of the step, shown to the learner in the course progress page
-#  description: Description 4 # a description of the step, shown to the learner in the course progress page
-#  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
-#  actions: # a list of the actions that will occur when the step is triggered by an event
-#  - type: # the type of action, full list at https://lab.github.com/docs/actions
-
-# Step 5: EDIT HERE - INTERNAL COMMENT FOR STEP 5
-#- title: Step 5 Title # the title of the step, shown to the learner in the course progress page
-#  description: Description 5 # a description of the step, shown to the learner in the course progress page
-#  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
-#  actions: # a list of the actions that will occur when the step is triggered by an event
-#  - type: # the type of action, full list at https://lab.github.com/docs/actions
-
-tags: ["static-analysis", "static-code-analysis", "sast", "devsecops", "semgrep"]
+      issue_doc_url: '{{ repoUrl }}/issues/1'
+steps:
+  - title: Getting Set Up
+    description: >-
+      Create a Semgrep Dashboard account, set up Slack notifications, and create
+      a Semgrep token.
+    event: issue_comment.created
+    link: '{{ repoUrl }}/pull/1'
+    actions:
+      - type: respond
+        with: 02_getting-set-up.md
+        data:
+          secrets_setting_url: '%payload.repository.html_url%/settings/secrets/actions'
+tags:
+  - static-analysis
+  - static-code-analysis
+  - sast
+  - devsecops
+  - semgrep
