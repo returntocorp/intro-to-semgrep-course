@@ -12,7 +12,7 @@ before:
   - type: createPullRequest
     title: Welcome to Semgrep!
     body: 01_welcome.md
-    head: main
+    head: welcome
     #data:
     #  issue_doc_url: '%payload.repository.html_url%/issues/1'    
   #- type: createIssue
