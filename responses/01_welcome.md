@@ -16,6 +16,10 @@ Then, there'll be an ` ⌨️ Activity` section at the bottom, that has you comp
 
 After you complete the steps in the Activity section, the bot will either autodetect what you've done and move you to the next step, or perhaps respond to a comment we ask you to write.
 
+## Note: Ignore the Semgrep scan failure warning
+
+We'll configure it soon.
+
 ## ⌨️ Activity: See Docs Links
 
 1. We created a new Issue with useful documentation for you to review if you get stuck. Give it a quick skim.
