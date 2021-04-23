@@ -19,17 +19,7 @@ before:
     data:
       issue_doc_url: '%payload.repository.html_url%/issues/1'
 steps:
-  - title: Getting Set Up
-    description: >-
-      Create a Semgrep Dashboard account, set up Slack notifications, and create
-      a Semgrep token.
-    event: issue_comment.created
-    link: '{{ repoUrl }}/pull/1'
-    actions:
-      - type: respond
-        with: 02_getting-set-up.md
-        data:
-          secrets_setting_url: '%payload.repository.html_url%/settings/secrets/actions'
+
 tags:
   - static-analysis
   - static-code-analysis
