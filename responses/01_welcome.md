@@ -18,7 +18,7 @@ After you complete the steps in the Activity section, the bot will either autode
 
 ## ⌨️ Activity: See Docs Links
 
-1. We created a new Issue with useful documentation for you to review if you get stuck. Check it out [here]({{ issue_doc_url }}).
+1. We created a new Issue with useful documentation for you to review if you get stuck. Give it a quick skim.
 2. Comment on this issue and the bot will respond with next steps 🚀
 
 <hr>
