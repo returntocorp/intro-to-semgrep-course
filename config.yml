@@ -44,7 +44,8 @@ steps:
     with: 03_set-up-semgrep.md # 03_goto-semgrep-setup-pr.md
     data:
       secrets_setting_url: '%payload.repository.html_url%/settings/secrets/actions'
-      url: '%payload.repository.html_url%/edit/.github/workflows/semgrep.yml?'
+      # NOTE: setup-semgrep is the current branch name of this PR
+      url: '%payload.repository.html_url%/edit/setup-semgrep/.github/workflows/semgrep.yml?'
     #data:
     #  url: '%repoUrl%/pull/2'
 

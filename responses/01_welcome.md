@@ -16,9 +16,11 @@ Then, there'll be an ` ⌨️ Activity` section at the bottom, that has you comp
 
 After you complete the steps in the Activity section, the bot will either autodetect what you've done and move you to the next step, or perhaps respond to a comment we ask you to write.
 
-## Note: Ignore the Semgrep scan failure warning
+## 💡 Important Notes
 
-We'll configure it soon.
+Currently you're likely seeing a Semgrep scan error. That's OK, we're going to configure it soon.
+
+If at any point throughout this lab you're not seeing a bot response or scan update that you'd expect to, try refreshing the page, sometimes things get in a wonky state.
 
 ## ⌨️ Activity: See Docs Links
 

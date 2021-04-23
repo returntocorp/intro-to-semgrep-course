@@ -2,9 +2,8 @@
 
 Alright, let's do a few quick things to get you up and running. 
 
-### Join the Slack
+### Join the r2c Community Slack
 
-r2c Community Slack
 
 
 Many security teams choose 
@@ -39,6 +38,7 @@ We'll walk through the app later.
    1. Go to the [Incoming WebHooks page](https://r2c-community.slack.com/apps/new/A0F7XDUAZ-incoming-webhooks) on the Slack App Directory, and in "Post to Channel" choose your name. This way, all notifications are going to be sent to you via direct message.
    2. Copy the "Webhook URL" generated on the next page (it should look like: `https://hooks.slack.com/services/...`) and go to the [Semgrep Integrations](https://semgrep.dev/manage/integrations) page, create a new integration, select "Slack", provide a name, paste in the webhook url, then save it.
    3. Click the "Test" button, and you should see a message from Semgrep in Slack.
+4. Now, on the [Semgrep Policies page](https://semgrep.dev/manage/policies), click on each policy, go to Settings -> Integrations -> Add, and select the Slack notification you set up.
 
 <hr>
 <h3 align="center">Comment on this pull request when you're ready and I'll respond with the next step.</h3>

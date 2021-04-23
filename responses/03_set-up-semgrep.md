@@ -10,6 +10,8 @@ See [these docs](https://semgrep.dev/docs/sample-ci-configs/) for info about set
    1. Within the Dashboard, go to the [Settings page](https://semgrep.dev/manage/settings) and create a new Semgrep token.
    2. Navigate to this repo's [Secrets page]({{ secrets_setting_url }}), create a new repository secret named `SEMGREP_APP_TOKEN`, and copy in the token value from the prior step.
 2. Configure `semgrep.yml` to point to your Dashboard account.
-  1. On the Dashboard [Settings page](https://semgrep.dev/manage/settings), copy the value of `publishDeployment` into [`semgrep.yml` in this repo]({{ url }}).
+   1. On the Dashboard [Settings page](https://semgrep.dev/manage/settings), copy the value of `publishDeployment`, and paste it into [`semgrep.yml` in this repo]({{ url }}), replacing the `TODO`.
+   2. Click the "Start commit" button and select "Commit directly to the `setup-semgrep` branch."
+
 <hr>
 <h3 align="center">I'll respond in this pull request when I detect a comment posted to it.</h3>
