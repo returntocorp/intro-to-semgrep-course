@@ -28,6 +28,7 @@ https://github.com/search?o=desc&p=1&q=topic%3Alearning-lab+org%3Agithubtraining
 * Referencing `main` when creating a new PR fails.
   * Why did `welcome` fail and not `setup-semgrep`?
 * Referencing a file that doesn't exist in messages
+* Having a `respond` after a `respond` seems to fail
 * `{{}}` vs `%var` in different contexts - why?
 * Having a responses.md file that references a `{{ variable }}` that isn't sent via a `data`.
 * Template repo being too big - there's a max size
