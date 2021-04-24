@@ -53,7 +53,7 @@ steps:
 - title: Writing Our First Rule # the title of the step, shown to the learner in the course progress page
   # video: https://lab.github.com/docs/embed-videos
   description: Learn the Semgrep rule writing basics and roll one out to this repo.
-  event: issue_comment.created # pull_request.synchronize # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  event: pull_request.synchronize # issue_comment.created # pull_request.synchronize # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
   link: '{{ repoUrl }}/pull/1'
   actions: # a list of the actions that will occur when the step is triggered by an event
   - type: mergeBranch
