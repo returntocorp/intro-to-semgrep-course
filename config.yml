@@ -49,6 +49,21 @@ steps:
     #data:
     #  url: '%repoUrl%/pull/2'
 
+
+- title: Writing Our First Rule # the title of the step, shown to the learner in the course progress page
+  # video: https://lab.github.com/docs/embed-videos
+  description: Learn the Semgrep rule writing basics and roll one out to this repo.
+  event: pull_request.synchronize # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  link: '{{ repoUrl }}/pull/1'
+  actions: # a list of the actions that will occur when the step is triggered by an event
+  - type: respond # the type of action, full list at https://lab.github.com/docs/actions
+    with: 04_semgrep-merge-response.md
+    data:
+      url: '%payload.repository.html_url%/pull/2'
+
+
+  # Commiting the publishDeployment user ID will cause a `pull_request` action
+  # And the a check_run.started, check_run.completed, and check_suite.completed
 tags:
   - static-analysis
   - static-code-analysis

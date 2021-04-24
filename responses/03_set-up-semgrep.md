@@ -14,4 +14,4 @@ See [these docs](https://semgrep.dev/docs/sample-ci-configs/) for info about set
    2. Click the "Start commit" button and select "Commit directly to the `setup-semgrep` branch."
 
 <hr>
-<h3 align="center">I'll respond in this pull request when I detect a comment posted to it.</h3>
+<h3 align="center">Merge this Pull Request once you've updated `semgrep.yml` and the Semgrep scan has successfully completed.</h3>
