@@ -6,8 +6,7 @@ This issue collects various links to useful Semgrep resources and documentation 
   * These rules are grouped into "rulesets" that collect related functionality, like rules that check for [secrets](https://semgrep.dev/p/secrets), target specific languages (e.g. [javascript](https://semgrep.dev/p/javascript)) or frameworks (e.g. [django](https://semgrep.dev/p/django)), or even entire vulnerability classes (e.g. [xss](https://semgrep.dev/p/xss) or [insecure
     transport](https://semgrep.dev/p/insecure-transport)).
   * [@returntocorp/semgrep-rules](https://github.com/returntocorp/semgrep-rules) - The source code of Semgrep's rules on GitHub.
-    * Note that the Registry has more rules than what's just in the `returntocorp/semgrep-rules` repo, as the Registry includes Semgrep rules from other community repos, like NodeJSScan or [Go
-      rules](https://github.com/dgryski/semgrep-go) by [Damian Gryski](https://twitter.com/dgryski).
+    * Note that the Registry has more rules than what's just in the `returntocorp/semgrep-rules` repo, as the Registry includes Semgrep rules from other community repos, like NodeJSScan or [Go rules](https://github.com/dgryski/semgrep-go) by [Damian Gryski](https://twitter.com/dgryski).
 * [Semgrep Playground](https://semgrep.dev/editor) - Write and share Semgrep rules right from your browser, no installation required!
 
 ## Rule Writing

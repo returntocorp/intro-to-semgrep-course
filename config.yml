@@ -42,10 +42,10 @@ steps:
 #      url: '%payload.repository.html_url%/edit/.github/workflows/semgrep.yml?'
   - type: respond # the type of action, full list at https://lab.github.com/docs/actions
     with: 03_set-up-semgrep.md # 03_goto-semgrep-setup-pr.md
-    data:
-      secrets_setting_url: '%payload.repository.html_url%/settings/secrets/actions'
+    #data:
+      #secrets_setting_url: '%payload.repository.html_url%/settings/secrets/actions'
       # NOTE: setup-semgrep is the current branch name of this PR
-      url: '%payload.repository.html_url%/edit/setup-semgrep/.github/workflows/semgrep.yml?'
+      #url: '%payload.repository.html_url%/edit/setup-semgrep/.github/workflows/semgrep.yml?'
     #data:
     #  url: '%repoUrl%/pull/2'
 
@@ -56,12 +56,22 @@ steps:
   event: pull_request.synchronize # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
   link: '{{ repoUrl }}/pull/1'
   actions: # a list of the actions that will occur when the step is triggered by an event
-  - type: respond # the type of action, full list at https://lab.github.com/docs/actions
+  - type: mergeBranch
+    head: main
+    base: eval
+  - type: respond
     with: 04_semgrep-merge-response.md
     data:
-      url: '%payload.repository.html_url%/pull/2'
-
-
+      url: '%payload.repository.html_url%/edit/eval/eval_test.ts'
+      #url: '%payload.repository.html_url%/pull/2'
+  - type: respond
+    with: 04_democratizing-static-analysis.md
+  - type: respond
+    with: 04_semgrep-first-rule.md
+    data:
+      eval_test_url: '%payload.repository.html_url%/edit/eval/eval_test.ts'
+      issue_doc_url: '%payload.repository.html_url%/issues/1'
+      checks_page_url: '%payload.repository.html_url%/pull/1/checks'
   # Commiting the publishDeployment user ID will cause a `pull_request` action
   # And the a check_run.started, check_run.completed, and check_suite.completed
 tags:
