@@ -6,7 +6,7 @@ For these exercises we're going to be using the Semgrep playground: https://semg
 
 If you'd prefer, you can also write Semgrep rules offline in your IDE of choice. After all, they're just YAML!
 
-This is the rule we're goingn to start on, open it in a separate browser tab: https://semgrep.dev/s/clintgibler:juice-shop-eval-try.
+This is the rule we're goingn to start on, open it in a separate browser tab: {{ eval_playground_url }}.
 
 ### UI Overview
 
@@ -58,7 +58,7 @@ We'll cover a number of Semgrep's capabilities in this lab, but there's many we 
 
 ## ⌨️ Activity: Write Your First Custom Rule
 
-1. Navigate to https://semgrep.dev/s/clintgibler:juice-shop-eval-try and update the pattern (currently `TODO`) to match all calls to `my_eval()`, regardless of the passed in arguments.
+1. Navigate to {{ eval_playground_url }} and update the pattern (currently `TODO`) to match all calls to `my_eval()`, regardless of the passed in arguments.
 2. Update the pattern to only match calls to `my_eval()` with only 1 argument.
 3. Update the pattern to only match calls to `my_eval()` when the first argument is *not* a string literal.
 4. Save the rule, click the "Add to Policy" button in the top right, and select "Starter Policy."
@@ -67,26 +67,26 @@ We'll cover a number of Semgrep's capabilities in this lab, but there's many we 
 **Hints**
 
 <details>
- <summary>1: Match all calls to `my_eval()`</summary>
+ <summary>1: Match all calls to <code>my_eval()</code></summary>
  <br>
-  Try using the ellipsis operator, `...`.
+  Try using the ellipsis operator, <code>...</code>.
 </details>
 
 <details>
- <summary>2: Match all calls to `my_eval()` with 1 argument</summary>
+ <summary>2: Match all calls to <code>my_eval()</code> with 1 argument</summary>
  <br>
   Try using a metavariable, like <code>$ARG</code>.
 </details>
 
 <details>
- <summary>3: Match all calls to `my_eval()` where the first argument is not a string literal</summary>
+ <summary>3: Match all calls to <code>my_eval()</code> where the first argument is not a string literal</summary>
  <br>
-  In Semgrep, <code>"..."</code> will match any string, regardless of its value ([docs](https://semgrep.dev/docs/writing-rules/pattern-syntax/#strings)).
+  In Semgrep, <code>"..."</code> will match any string, regardless of its value (<a href="https://semgrep.dev/docs/writing-rules/pattern-syntax/#strings">docs</a>).
 
-  And [`pattern-not`](https://semgrep.dev/docs/writing-rules/rule-syntax/#pattern-not) filters out matches.
+  And <a href="https://semgrep.dev/docs/writing-rules/rule-syntax/#pattern-not"><code>pattern-not</code></a> filters out matches.
 
-  Try clicking the <code>+</code> button to add a new pattern and select "and is not", which if you switch to the Advanced view, you can see is represented by `pattern-not` under the hood.
+  Try clicking the <code>+</code> button to add a new pattern and select "and is not", which if you switch to the Advanced view, you can see is represented by <code>pattern-not</code> under the hood.
 </details>
 
 <hr>
-<h3 align="center">Comment on this Pull Request once you've re-scanned this PR with your new `my_eval()` rule.</h3>
+<h3 align="center">Comment on this Pull Request once you've re-scanned this PR with your new <code>my_eval()</code> rule.</h3>
