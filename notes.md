@@ -29,6 +29,8 @@ https://github.com/search?o=desc&p=1&q=topic%3Alearning-lab+org%3Agithubtraining
   * Why did `welcome` fail and not `setup-semgrep`?
 * Referencing a file that doesn't exist in messages
 * Having a `respond` after a `respond` seems to fail
+  * Adding an `issue: 1` for a PR seems to make it fail, even when broken up with a `mergeBranch` in between.
+  * Moving `mergeBranch` between and removing `issue: 1` on the second one seems to work.
 * `{{}}` vs `%var` in different contexts - why?
 * Having a responses.md file that references a `{{ variable }}` that isn't sent via a `data`.
 * Template repo being too big - there's a max size
