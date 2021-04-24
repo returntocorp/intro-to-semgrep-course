@@ -66,6 +66,7 @@ steps:
     base: eval
   - type: respond # direct respond after respond seems to fail, adding `issue`
     with: 04_democratizing-static-analysis.md
+    data:
       checks_page_url: '%payload.repository.html_url%/pull/1/checks'
       eval_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-eval-try'
     # issue: 1
