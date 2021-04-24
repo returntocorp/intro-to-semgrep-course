@@ -64,14 +64,15 @@ steps:
     data:
       url: '%payload.repository.html_url%/edit/eval/eval_test.ts'
       #url: '%payload.repository.html_url%/pull/2'
-  #- type: respond
-  #  with: 04_democratizing-static-analysis.md
-  #- type: respond
-  #  with: 04_semgrep-first-rule.md
-  #  data:
-  #    eval_test_url: '%payload.repository.html_url%/edit/eval/eval_test.ts'
-  #    issue_doc_url: '%payload.repository.html_url%/issues/1'
-  #    checks_page_url: '%payload.repository.html_url%/pull/1/checks'
+  - type: respond
+    with: 04_democratizing-static-analysis.md
+  - type: respond
+    with: 04_semgrep-first-rule.md
+    data:
+      #eval_test_url: '%payload.repository.html_url%/edit/eval/eval_test.ts'
+      #issue_doc_url: '%payload.repository.html_url%/issues/1'
+      checks_page_url: '%payload.repository.html_url%/pull/1/checks'
+      eval_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-eval-try'
   # Commiting the publishDeployment user ID will cause a `pull_request` action
   # And the a check_run.started, check_run.completed, and check_suite.completed
 tags:
