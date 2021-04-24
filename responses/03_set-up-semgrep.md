@@ -16,4 +16,4 @@ See [these docs](https://semgrep.dev/docs/sample-ci-configs/) for info about set
 
 
 <hr>
-<h3 align="center">Comment on this Pull Request once you've finished onboarding Semgrep (`semgrep.yml` GitHub Actionn) to this repo.</h3>
+<h3 align="center">Comment on this Pull Request once you've finished onboarding Semgrep (<code>semgrep.yml</code> GitHub Action) to this repo.</h3>

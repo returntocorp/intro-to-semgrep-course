@@ -18,8 +18,6 @@ After you complete the steps in the Activity section, the bot will either autode
 
 ## 💡 Important Notes
 
-Currently you're likely seeing a Semgrep scan error. That's OK, we're going to configure it soon.
-
 If at any point throughout this lab you're not seeing a bot response or scan update that you'd expect to, try refreshing the page, sometimes things get in a wonky state.
 
 ## ⌨️ Activity: See Docs Links
