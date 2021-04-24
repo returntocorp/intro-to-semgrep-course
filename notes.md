@@ -81,6 +81,29 @@ jobs:
 ~~~    
 
 
+## 03_set-up-semgrep.md
+
+### Manual Set Up
+
+If you'd prefer to set things up manually, here's what you can do:
+
+1. Set up Semgrep's API token.
+   1. Within the Dashboard, go to the [Settings page](https://semgrep.dev/manage/settings) and create a new Semgrep token.
+   2. Navigate to this repo's [Secrets page]({{ secrets_setting_url }}), create a new repository secret named `SEMGREP_APP_TOKEN`, and copy in the token value from the prior step.
+2. Configure `semgrep.yml` to point to your Dashboard account.
+   1. On the Dashboard [Settings page](https://semgrep.dev/manage/settings), copy the value of `publishDeployment`, and paste it into [`semgrep.yml` in this repo]({{ url }}), replacing the `TODO`.
+   2. Click the "Start commit" button and select "Commit directly to the `setup-semgrep` branch."
+
+
+## 04_semgrep-merge-response.md
+
+
+I've opened another PR for us to work from, [click here]({{ url }}) to continue.
+
+**Troubleshooting**
+If that's not the case, make sure you've set up `SEMGREP_APP_TOKEN` as a repo secret in this project, and that you've put in the right value for `publishDeployment` in `semgrep.yml`. See more detailed instructions above.
+
+
 # Lab steps
 
 🛠️ = user, 🤖 = Lab

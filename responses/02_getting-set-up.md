@@ -32,13 +32,13 @@ We'll walk through the app later.
 
 ## ⌨️ Activity: Create a Dashboard Account, Set up Slack Notifications
 
-1. Join the [r2c community Slack](https://r2c.dev/slack) and the appropriate workshop channel.
+1. Join the [r2c community Slack](https://r2c.dev/slack) and the `#workshop-2021-owasp-devslop` channel.
 2. Log in to the [Semgrep Dashboard](https://semgrep.dev/manage/).
 3. Set up Slack Notifications.
    1. Go to the [Incoming WebHooks page](https://r2c-community.slack.com/apps/new/A0F7XDUAZ-incoming-webhooks) on the Slack App Directory, and in "Post to Channel" choose your name. This way, all notifications are going to be sent to you via direct message.
-   2. Copy the "Webhook URL" generated on the next page (it should look like: `https://hooks.slack.com/services/...`) and go to the [Semgrep Integrations](https://semgrep.dev/manage/integrations) page, create a new integration, select "Slack", provide a name, paste in the webhook url, then save it.
+   2. Copy the "Webhook URL" generated on the next page (it should look like: `https://hooks.slack.com/services/...`) and go to the [Semgrep Integrations](https://semgrep.dev/manage/integrations) page (you may need to click on "Integrations" in the left hand side navbar), create a new integration, select "Slack", provide a name, paste in the webhook url, then save it.
    3. Click the "Test" button, and you should see a message from Semgrep in Slack.
-4. Now, on the [Semgrep Policies page](https://semgrep.dev/manage/policies), click on each policy, go to Settings -> Integrations -> Add, and select the Slack notification you set up.
+4. Now, on the [Semgrep Policies page](https://semgrep.dev/manage/policies), click on each policy, go to Settings -> Integrations -> Add, select the Slack notification you set up, and click "Save".
 
 <hr>
 <h3 align="center">Comment on this pull request when you're ready and I'll respond with the next step.</h3>
