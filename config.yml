@@ -64,8 +64,9 @@ steps:
     data:
       url: '%payload.repository.html_url%/edit/eval/eval_test.ts'
       #url: '%payload.repository.html_url%/pull/2'
-  - type: respond
+  - type: respond # direct respond after respond seems to fail, adding `issue`
     with: 04_democratizing-static-analysis.md
+    issue: 1
   #- type: respond
   #  with: 04_semgrep-first-rule.md
   #  data:
