@@ -1,5 +1,5 @@
-# Learning Lab Boilerplate
+# Intro to Semgrep
 
-This repository is a boilerplate for creating [Learning Lab courses](https://lab.github.com/docs/).
+A step-by-step walkthrough of setting up [Semgrep](https://semgrep.dev/) in CI using GitHub Actions.
 
-To follow along with the course, navigate to pull request #1. 
+Welcome to static analysis: ludicrous mode 🚀
