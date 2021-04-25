@@ -89,7 +89,7 @@ steps:
   - type: respond # the type of action, full list at https://lab.github.com/docs/actions
     with: 05_ran-eval-congrats.md
     data:
-      route_pr_url: '%payload.repository.html_url%/pull/2'
+      route_pr_url: '%payload.repository.html_url%/pull/3'
   # create new PR with route stuff
   - type: createPullRequest
     title: Auditing Routes
@@ -97,12 +97,12 @@ steps:
     head: routes   # setup-semgrep # welcome
     # base: main
     data:
-      checks_page_url: '%payload.repository.html_url%/pull/2/checks'
+      checks_page_url: '%payload.repository.html_url%/pull/3/checks'
       route_get_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-get-try'
       route_all_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-all-try'
       route_use_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-use-try'
       route_unauth_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-unauth-try'
-  - type: updateBranchProtection
+  - type: updateBranchProtection # maybe needed for this PR to be created
 
 tags:
   - static-analysis

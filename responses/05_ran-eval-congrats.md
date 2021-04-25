@@ -26,7 +26,7 @@ No need to file PRs on hundreds of repos, no need to wait on developers or DevOp
 
 (Note: of course you want to roll out new rules carefully, to ensure they're high signal, don't bother our developer friends, etc.)
 
-## ⌨️ Activity: Write Your First Custom Rule
+## ⌨️ Activity: Audit Routes
 
 Time for the next rule writing challenge!
 
