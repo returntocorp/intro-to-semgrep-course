@@ -83,7 +83,7 @@ Here are a few examples:
 foo(1);      // matches, $X = 1
 foo(a);      // matches, $X = "a"
 
-// doesn't match, foo() called with >1 arg
+// foo($X) doesn't match, foo() called with >1 arg
 foo(a, b, c);
 
 // Ellipsis operator and metavariables can be combined!
@@ -93,7 +93,7 @@ foo(a, b, c);   // foo(..., $Y) matches, $Y = c
 foo(a);         // foo(..., $Y) matches, $Y = a
 ```
 
-Note that *within one pattern, metavariables are enforced to be the same*.
+Note that **within one pattern, metavariables are enforced to be the same**.
 
 So:
 
@@ -154,4 +154,4 @@ Navigate to {{ eval_playground_url }}.
 </details>
 
 <hr>
-<h3 align="center">I'll automatically on this Pull Request once you've re-scanned this PR with your new <code>my_eval()</code> rule.</h3>
+<h3 align="center">Comment on this Pull Request once you've re-scanned this PR with your new <code>my_eval()</code> rule.</h3>
