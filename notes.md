@@ -38,6 +38,9 @@ https://github.com/search?o=desc&p=1&q=topic%3Alearning-lab+org%3Agithubtraining
 * Online editor IDE deletes all comments
 * When you push commits view online editor it doesn't sync the course, you have
   to do that manually
+* Creating a PR -> Comment -> PR, the second PR is #3, even though it's only the second one (https://github.com/practical-program-analysis/intro-to-semgrep/pull/3). The Issue is #2.
+  * Maybe this is intended behavior to differentiate #'s in comments?
+  
 
 ## Building the Course
 
