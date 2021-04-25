@@ -1,34 +1,12 @@
 ## Getting Started
 
-Alright, let's do a few quick things to get you up and running. 
+Alright, first we'll do a few quick things to get you up and running.
 
-### Join the r2c Community Slack
+At a high level, here's what we're going to do:
 
+**Join the r2c Community Slack** - There's a channel for this workshop you can ask questions in, and we'll use it to set up notifications when Semgrep finds issues.
 
-
-Many security teams choose 
-
-### Create a Semgrep App Account
-
-We need this for managing Semgrep in CI and choosing which rules to run, where.
-
-Totally free for open *and* closed source repos.
-
-Background stuff
-
-#### Set up Slack Notification
-
-Copy in Slack webhook URL provided by r2c into notifications. Configure policy to use those notifications.
-
-#### Add Semgrep Token to GitHub Secrets
-
-Grab token
-
-Add to project Secrets tab
-
-TODO GIF showing the process or Youtube video
-
-We'll walk through the app later.
+**Create a free Semgrep App account** - This lets us easily manage Semgrep in CI, set up notifications, configure scanning policy, view results over time, and more.
 
 ## ⌨️ Activity: Create a Dashboard Account, Set up Slack Notifications
 
