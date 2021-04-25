@@ -29,11 +29,11 @@ For these exercises we're going to be using the Semgrep playground: https://semg
 
 If you'd prefer, you can also write Semgrep rules offline in your IDE of choice. After all, they're just YAML!
 
-This is the rule we're goingn to start on, open it in a separate browser tab: {{ eval_playground_url }}.
+This is the rule we're going to start on, open it in a separate browser tab: {{ eval_playground_url }}.
 
 ### UI Overview
 
-In the top left, you can select a "Language", which is currently "TypeScript."
+In the top left, you can select a "Language" for the rule you're currently writing. In this case, we're using "TypeScript," because Juice Shop is mostly in TypeScript.
 
 The "code is" section is where you write your Semgrep rule. 
 * This rule will then be ran against the "Test Code" section at the bottom.
@@ -42,7 +42,7 @@ The "code is" section is where you write your Semgrep rule.
 The `// ruleid:juice-shop-eval` comments you see in the Test Code are a special syntax - they're telling Semgrep, "Hey, I expect Semgrep to find a match here." 
 * This makes it easy to write unit tests for your Semgrep rules, to ensure they're working as you expect. See [the docs](https://semgrep.dev/docs/writing-rules/testing-rules/) for more details.
 
-If you click on the "Advanced" tab (next to "Simple" under the "Semgrep Rule" header on the left hand side), you'll see the raw YAML for the Semgrep rule you're writing. The "Simple" view is a just a simplified interface so you don't have to write raw YAML and mess with indentation, etc.
+If you click on the "Advanced" tab (next to "Simple" under the "Semgrep Rule" header on the left hand side), you'll see the raw YAML for the Semgrep rule you're writing. The "Simple" view is just a simplified interface so you don't have to write raw YAML and mess with indentation, etc.
 
 ## Rule Writing Basics
 
@@ -52,9 +52,21 @@ At a high level, Semgrep rules are just the code you're targeting + a few abstra
 
 Sometimes you want to abstract away some details from the code you're matching, to make it more generic. 
 
-The [ellipsis operator](https://semgrep.dev/docs/writing-rules/pattern-syntax/#ellipsis-operator) lets you match zero or more arguments, statements, and more.
+The [ellipsis operator](https://semgrep.dev/docs/writing-rules/pattern-syntax/#ellipsis-operator) (`...`) lets you match zero or more arguments, statements, and more. 
 
-You can think of the ellipsis operator (`...`) like `.*` in regular expressions.
+Here are a few examples:
+
+```javascript
+// insecure_function(...) would match
+insecure_function("MALICIOUS_STRING", arg1, arg2)
+
+// var x = ...; would match each of these
+var x = "semgrep";
+var x = foo && bar || baz;
+var x = foo(something);
+```
+
+You can think of the ellipsis operator like `.*` in regular expressions.
 
 ### Metavariables
 
@@ -63,6 +75,34 @@ Sometimes you want to match something, but you don't know what it is ahead of ti
 For example, the name of a function, the value of an argument, and so forth.
 
 [Metavariables](https://semgrep.dev/docs/writing-rules/pattern-syntax/#metavariables) let you do that by using an identifier that starts with a `$` and is only uppercase letters, `_`, or digits. `$X` or `$FOO` for example.
+
+Here are a few examples:
+
+```javascript
+// foo($X)
+foo(1);      // matches, $X = 1
+foo(a);      // matches, $X = "a"
+
+// doesn't match, foo() called with >1 arg
+foo(a, b, c);
+
+// Ellipsis operator and metavariables can be combined!
+
+foo(a, b, c);   // foo($X, ...) matches, $X = a
+foo(a, b, c);   // foo(..., $Y) matches, $Y = c
+foo(a);         // foo(..., $Y) matches, $Y = a
+```
+
+Note that *within one pattern, metavariables are enforced to be the same*.
+
+So:
+
+```javascript
+// bar($X, $X)
+bar(a, a)   // matches
+bar(10, 10) // matches
+bar(a, b)   // does not match, a != b
+```
 
 You can think of metavariables kind of like capture groups in regular expressions.
 
@@ -75,13 +115,15 @@ Sometimes you want to combine Semgrep patterns, like:
 
 You can add additional pattern clauses in the simple editor by clicking the `+` button on the right hand side of the pattern. 
 
-Currently on a few Semgrep operators are available in the simple editor.See the [rule syntax docs](https://semgrep.dev/docs/writing-rules/rule-syntax/) for all of the tools in your Semgrep rule writing toolbelt.
+Currently on a few Semgrep operators are available in the simple editor. See the [rule syntax docs](https://semgrep.dev/docs/writing-rules/rule-syntax/) for all of the tools in your Semgrep rule writing toolbelt.
 
-We'll cover a number of Semgrep's capabilities in this lab, but there's many we won't!
+We'll cover a number of Semgrep's capabilities in this lab, but there are many we won't!
 
 ## ⌨️ Activity: Write Your First Custom Rule
 
-1. Navigate to {{ eval_playground_url }} and update the pattern (currently `TODO`) to match all calls to `my_eval()`, regardless of the passed in arguments.
+Navigate to {{ eval_playground_url }}.
+
+1. Update the pattern (currently `TODO`) to match all calls to `my_eval()`, regardless of the passed in arguments.
 2. Update the pattern to only match calls to `my_eval()` with only 1 argument.
 3. Update the pattern to only match calls to `my_eval()` when the first argument is *not* a string literal.
 4. Save the rule, click the "Add to Policy" button in the top right, and select "Starter Policy."
@@ -105,11 +147,11 @@ We'll cover a number of Semgrep's capabilities in this lab, but there's many we 
  <summary>3: Match all calls to <code>my_eval()</code> where the first argument is not a string literal</summary>
  <br>
   In Semgrep, <code>"..."</code> will match any string, regardless of its value (<a href="https://semgrep.dev/docs/writing-rules/pattern-syntax/#strings">docs</a>).
-
+  <br/>
   And <a href="https://semgrep.dev/docs/writing-rules/rule-syntax/#pattern-not"><code>pattern-not</code></a> filters out matches.
-
+  <br/>
   Try clicking the <code>+</code> button to add a new pattern and select "and is not", which if you switch to the Advanced view, you can see is represented by <code>pattern-not</code> under the hood.
 </details>
 
 <hr>
-<h3 align="center">Comment on this Pull Request once you've re-scanned this PR with your new <code>my_eval()</code> rule.</h3>
+<h3 align="center">I'll automatically on this Pull Request once you've re-scanned this PR with your new <code>my_eval()</code> rule.</h3>

@@ -79,6 +79,29 @@ steps:
   #    eval_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-eval-try'
   # Commiting the publishDeployment user ID will cause a `pull_request` action
   # And the a check_run.started, check_run.completed, and check_suite.completed
+
+- title: Auditing Routes # the title of the step, shown to the learner in the course progress page
+  # video: https://lab.github.com/docs/embed-videos
+  description: How to use Semgrep in notify only mode, for example, alerting the security team when new routes are added. # a description of the step, shown to the learner in the course progress page
+  event: check_suite.completed # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  link: '{{ repoUrl }}/pull/1'
+  actions:
+  - type: respond # the type of action, full list at https://lab.github.com/docs/actions
+    with: 05_ran-eval-congrats.md
+    data:
+      route_pr_url: '%payload.repository.html_url%/pull/2'
+  # create new PR with route stuff
+  - type: createPullRequest
+    title: Auditing Routes
+    body: 05_auditing-routes.md
+    head: routes   # setup-semgrep # welcome
+    data:
+      checks_page_url: '%payload.repository.html_url%/pull/2/checks'
+      route_get_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-get-try'
+      route_all_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-all-try'
+      route_use_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-use-try'
+      route_unauth_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-unauth-try'
+
 tags:
   - static-analysis
   - static-code-analysis
