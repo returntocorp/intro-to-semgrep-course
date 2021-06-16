@@ -102,6 +102,28 @@ steps:
       route_all_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-all-try'
       route_use_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-use-try'
       route_unauth_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-unauth-try'
+      route_pr_url: '%payload.repository.html_url%/pull/4'
+  - type: updateBranchProtection # maybe needed for this PR to be created
+
+- title: Scanning for Secrets # the title of the step, shown to the learner in the course progress page
+  # video: https://lab.github.com/docs/embed-videos
+  description: Start scanning every PR for leaked secrets using out-of-the box rules, and write a new rule to find a custom secret type. # a description of the step, shown to the learner in the course progress page
+  event: issue_comment.created # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  link: '{{ repoUrl }}/pull/2'
+  actions:
+  - type: respond # the type of action, full list at https://lab.github.com/docs/actions
+    with: 06_finding-secrets-congrats.md
+    data:
+      route_pr_url: '%payload.repository.html_url%/pull/3'
+  # create new PR with route stuff
+  - type: createPullRequest
+    title: Scanning for Secrets
+    body: 06_finding-secrets.md
+    head: secrets   # setup-semgrep # welcome
+    # base: main
+    data:
+      checks_page_url: '%payload.repository.html_url%/pull/3/checks'
+
   - type: updateBranchProtection # maybe needed for this PR to be created
 
 tags:

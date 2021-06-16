@@ -51,4 +51,4 @@ Your rule will largely be the same each time (with some improvements). The reaso
    1. Save this final rule, and add it to your "Security Policy" policy and [re-scan this PR]({{ checks_page_url }}).
 
 <hr>
-<h3 align="center">Congrats, you're done!</h3>
+<h3 align="center">Comment on this Pull Request once you're done, and visit the <a href="{{ route_pr_url }}">next PR</a> to continue.</h3>
