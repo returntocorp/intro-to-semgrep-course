@@ -102,7 +102,6 @@ steps:
       route_all_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-all-try'
       route_use_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-use-try'
       route_unauth_playground_url: 'https://semgrep.dev/s/clintgibler:juice-shop-route-unauth-try'
-      route_pr_url: '%payload.repository.html_url%/pull/4'
   - type: updateBranchProtection # maybe needed for this PR to be created
 
 - title: Scanning for Secrets # the title of the step, shown to the learner in the course progress page
@@ -114,7 +113,7 @@ steps:
   - type: respond # the type of action, full list at https://lab.github.com/docs/actions
     with: 06_auditing-routes-congrats.md
     data:
-      route_pr_url: '%payload.repository.html_url%/pull/3'
+      route_pr_url: '%payload.repository.html_url%/pull/4'
   # create new PR with route stuff
   - type: createPullRequest
     title: Scanning for Secrets
@@ -122,7 +121,8 @@ steps:
     head: secrets   # setup-semgrep # welcome
     # base: main
     data:
-      checks_page_url: '%payload.repository.html_url%/pull/3/checks'
+      secrets_checks_page_url: '%payload.repository.html_url%/pull/4/checks'
+      files_changed_url: '%payload.repository.html_url%/pull/4/files'
 
   - type: updateBranchProtection # maybe needed for this PR to be created
 

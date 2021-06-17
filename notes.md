@@ -40,7 +40,7 @@ https://github.com/search?o=desc&p=1&q=topic%3Alearning-lab+org%3Agithubtraining
   to do that manually
 * Creating a PR -> Comment -> PR, the second PR is #3, even though it's only the second one (https://github.com/practical-program-analysis/intro-to-semgrep/pull/3). The Issue is #2.
   * Maybe this is intended behavior to differentiate #'s in comments?
-  
+* If you use the same `data` variable name in multiple blocks, previously defined values seem to shadow later ones. e.g. If in step 3 you have a `checks_page_url` and in step 4 you have a `checks_page_url`, the `checks_page_url` `data` value used to render the MD of step 4 will use the one from step 3.  
 
 ## Building the Course
 
