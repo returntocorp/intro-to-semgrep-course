@@ -112,7 +112,7 @@ steps:
   link: '{{ repoUrl }}/pull/2'
   actions:
   - type: respond # the type of action, full list at https://lab.github.com/docs/actions
-    with: 06_finding-secrets-congrats.md
+    with: 06_auditing-routes-congrats.md
     data:
       route_pr_url: '%payload.repository.html_url%/pull/3'
   # create new PR with route stuff
